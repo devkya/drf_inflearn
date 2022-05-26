@@ -4,8 +4,8 @@ from . import views
 
 router = DefaultRouter()
 router.register('post', views.PostViewSet) # 2개의 url을 만들어줌
-print(router.urls)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('public/', views.PostListAPIView.as_view())
 ]
